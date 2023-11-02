@@ -2,6 +2,7 @@ package main;
 
 import geometry.Line;
 import geometry.Point;
+import geometry.Rectangle;
 
 public class Main {
 
@@ -99,6 +100,21 @@ public class Main {
 		l1.setStartPoint(p1); // startPoint,p1,p2 -> x(10), y(10), selected(false) Objekat 2
 		p2.setX(50); // startPoint,p1,p2 -> x(50), y(10), selected(false) Objekat 2
 		System.out.println(l1.getStartPoint().getX());
+		
+		//Vezbe 4
+		
+		System.out.println("Izvrsavanje toString metode: " + p1.toString());
+		
+		int prviBroj = 50;
+		int drugiBroj = 50;
+		String prviString = "prvi";
+		String kopija = "prvi";
+		Rectangle r1 = new Rectangle(new Point(10,10), 40,40);
+		Rectangle r2 = new Rectangle(new Point(10,10), 40,40);
+		
+		System.out.println("Znak jednakosti kod primitiva: " + (prviBroj == drugiBroj));
+		System.out.println("Znak jednakosti kod Stringova: " + prviString == kopija);
+		System.out.println("Znak jednakosti kod referenci: " + (r1==r2));
 	}
 
 }

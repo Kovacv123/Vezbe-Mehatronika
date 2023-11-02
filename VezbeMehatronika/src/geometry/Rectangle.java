@@ -6,6 +6,21 @@ public class Rectangle {
 	private int width;
 	private int height;
 	private boolean selected;
+	
+	public Rectangle() {
+		
+	}
+	
+	public Rectangle(Point upperLeft, int width, int heigth) {
+		this.upperLeft = upperLeft;
+		this.width = width;
+		this.height = heigth;
+	}
+	
+	public Rectangle(Point upperLeft, int width, int heigth,boolean selected) {
+		this(upperLeft, width, heigth);
+		this.selected = selected;
+	}
 
 	public int area() {
 		return width * height;
@@ -13,6 +28,23 @@ public class Rectangle {
 
 	public int circumference() {
 		return 2 * width + 2 * height;
+	}
+	
+	@Override
+	public String toString() {
+		return "Upper left: (" + upperLeft.getX() + "," + upperLeft.getY() + "), "
+				+ "width = " + width + ", height = " + height; 
+	}
+	
+	@Override
+	public boolean equals(Object o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			if(width == temp.getWidth() && height == temp.getHeight()) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	public Point getUpperLeft() {
