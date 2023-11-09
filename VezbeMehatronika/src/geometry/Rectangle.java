@@ -46,6 +46,14 @@ public class Rectangle {
 		}
 		return false;
 	}
+	
+	public boolean contains(int x, int y) {
+		if( (x >= upperLeft.getX() && x <= upperLeft.getX() + width)
+				&& (y>= upperLeft.getY() && y <= upperLeft.getY() + height) ) {
+			return true;
+		}
+		return false;
+	}
 
 	public Point getUpperLeft() {
 		return upperLeft;

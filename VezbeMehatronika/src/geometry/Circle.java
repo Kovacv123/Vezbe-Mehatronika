@@ -2,9 +2,9 @@ package geometry;
 
 public class Circle {
 
-	private int radius;
-	private Point center;
-	private boolean selected;
+	protected int radius;
+	protected Point center;
+	protected boolean selected;
 	
 	public Circle() {
 		
@@ -41,6 +41,13 @@ public class Circle {
 			if(radius == temp.getRadius()) {
 				return true;
 			}
+		}
+		return false;
+	}
+	
+	public boolean contains(int x, int y) {
+		if(center.distance(new Point(x,y)) <= radius) {
+			return true;
 		}
 		return false;
 	}
