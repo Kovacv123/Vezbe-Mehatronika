@@ -121,6 +121,7 @@ public class Main {
 		
 		//VEZBE 5 - Nasledjivanje
 		Donut d1 = new Donut(new Point(50,50), 30, true, 20);
+		System.out.println(d1);
 		System.out.println(d1 instanceof Donut);
 		System.out.println(d1 instanceof Circle);
 		System.out.println(d1 instanceof Object);

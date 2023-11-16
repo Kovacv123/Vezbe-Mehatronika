@@ -6,4 +6,5 @@
  *
  */
 module VezbeMehatronika {
+	requires java.desktop;
 }
