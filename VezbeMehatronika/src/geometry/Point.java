@@ -28,6 +28,19 @@ public class Point extends Shape{
 		g.drawLine(x, y-2, x, y+2); // Vertikalna linija	
 	}
 	
+	@Override
+	public void moveTo(int x, int y) {
+		this.x = x;
+		this.y = y;		
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		x+=byX;
+		y+=byY;
+		
+	}
+	
 	public double distance(Point p1) {
 		int dx = x - p1.x;
 		int dy = y - p1.y;
@@ -37,6 +50,15 @@ public class Point extends Shape{
 	@Override
 	public String toString() {
 		return "(" + x + "," + y + ")";
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Point) {
+			Point temp = (Point) o;
+			return (int) (distance(new Point(0,0)) - temp.distance(new Point(0,0)));
+		}
+		return 0;
 	}
 	
 	@Override
@@ -69,5 +91,9 @@ public class Point extends Shape{
 	public void setY(int y) {
 		this.y = y;
 	}
+
+	
+
+	
 	
 }

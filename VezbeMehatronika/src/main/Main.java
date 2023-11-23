@@ -3,6 +3,7 @@ package main;
 import geometry.Circle;
 import geometry.Donut;
 import geometry.Line;
+import geometry.Moveable;
 import geometry.Point;
 import geometry.Rectangle;
 
@@ -125,6 +126,7 @@ public class Main {
 		System.out.println(d1 instanceof Donut);
 		System.out.println(d1 instanceof Circle);
 		System.out.println(d1 instanceof Object);
+		
 	}
 
 }

@@ -39,6 +39,15 @@ public class Donut extends Circle {
 	}
 	
 	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Donut) {
+			Donut temp = (Donut) o;
+			return (int)(area() - temp.area());
+		}
+		return 0;
+	}
+	
+	@Override
 	public boolean equals(Object o) {
 		if(o instanceof Donut) {
 			Donut temp = (Donut) o;

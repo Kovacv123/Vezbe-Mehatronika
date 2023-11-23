@@ -28,6 +28,16 @@ public class Rectangle extends Shape {
 		g.drawRect(upperLeft.getX(), upperLeft.getY(), width, height);
 		
 	}
+	
+	@Override
+	public void moveTo(int x, int y) {
+		upperLeft.moveTo(x, y);
+	}
+
+	@Override
+	public void moveBy(int byX, int byY) {
+		upperLeft.moveBy(byX, byY);
+	}
 
 	public int area() {
 		return width * height;
@@ -41,6 +51,15 @@ public class Rectangle extends Shape {
 	public String toString() {
 		return "Upper left: (" + upperLeft.getX() + "," + upperLeft.getY() + "), "
 				+ "width = " + width + ", height = " + height; 
+	}
+	
+	@Override
+	public int compareTo(Object o) {
+		if(o instanceof Rectangle) {
+			Rectangle temp = (Rectangle) o;
+			return area() - temp.area();
+		}
+		return 0;
 	}
 	
 	@Override
@@ -85,5 +104,7 @@ public class Rectangle extends Shape {
 	public void setHeight(int height) {
 		this.height = height;
 	}
+
+	
 
 }
