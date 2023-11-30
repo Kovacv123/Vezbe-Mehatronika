@@ -1,11 +1,10 @@
 package main;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import geometry.Circle;
-import geometry.Donut;
-import geometry.Line;
-import geometry.Moveable;
 import geometry.Point;
-import geometry.Rectangle;
 
 public class Main {
 
@@ -121,11 +120,64 @@ public class Main {
 		
 		
 		//VEZBE 5 - Nasledjivanje
-		Donut d1 = new Donut(new Point(50,50), 30, true, 20);
-		System.out.println(d1);
-		System.out.println(d1 instanceof Donut);
-		System.out.println(d1 instanceof Circle);
-		System.out.println(d1 instanceof Object);
+//		Donut d1 = new Donut(new Point(50,50), 30, true, 20);
+//		System.out.println(d1);
+//		System.out.println(d1 instanceof Donut);
+//		System.out.println(d1 instanceof Circle);
+//		System.out.println(d1 instanceof Object);
+		
+		
+		// --------- Vezbe 8 ------------
+//		int[] niz = new int[5];
+//		niz[0] = 4;
+//		niz[1] = 5;
+//		niz[2] = 6;
+//		niz[3] = 7;
+//		niz[4] = 8;
+//		
+//		//int[] drugiNiz = new int[] {4,5,6,7,8};
+//		int[] drugiNiz = {4,5,6,7,8};
+//		
+//		for(int i = drugiNiz.length-1; i>=0; i--) {
+//			System.out.print(drugiNiz[i] + " ");
+//		}
+		
+		
+		HashMap<String,String> mapa = new HashMap<String,String>();
+		mapa.put("txt", "notepad.exe");
+		mapa.put("bmp", "paint.exe");
+		mapa.put("dib", "notepad.exe");
+		mapa.put("rtf", "wordpad.exe");
+		
+		mapa.replace("rtf", "winword.exe");
+		if(! mapa.containsKey("tif")) {
+			System.out.println("Kljuc tif nije pronadjen");
+		}
+		if(! mapa.containsKey("ht")) {
+			mapa.put("ht", "hypertrm.exe");
+			System.out.println("Dodat je novi key-value par: ht-hypertrm.exe");
+		}
+		
+		for(Map.Entry<String, String> es : mapa.entrySet()) {
+			System.out.println(es);
+		}
+		
+		if( ! mapa.containsKey("doc")) {
+			System.out.println("Kljuc doc ne postoji");
+		}else {
+			mapa.remove("doc");
+		}
+		
+		Circle c1 = new Circle(new Point(0,0),30);
+//		try {
+//			c1.setRadius(0);
+//		} catch (Exception e) {
+//			System.out.println(e.getMessage());
+//		}
+		
+		int broj = 5/0;
+		
+		System.out.println("Kod posle exceptiona");
 		
 	}
 
