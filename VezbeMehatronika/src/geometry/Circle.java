@@ -1,5 +1,6 @@
 package geometry;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Circle extends Shape {
@@ -24,6 +25,14 @@ public class Circle extends Shape {
 	@Override
 	public void draw(Graphics g) {
 		g.drawOval(center.getX()-radius, center.getY()-radius, radius*2, radius*2);
+		if(selected) {
+			g.setColor(Color.BLUE);
+			g.drawRect(center.getX()-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()+radius-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()-radius-3, center.getY()-3, 6, 6);
+			g.drawRect(center.getX()-3, center.getY()+radius-3, 6, 6);
+			g.drawRect(center.getX()-3, center.getY()-radius-3, 6, 6);
+		}
 		
 	}
 	
